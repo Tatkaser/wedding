@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Свадебное приглашение: Твтьяна и Сергей</title>
+  <style>
+    :root {
+      --primary: #d4a373; /* тёплый золотой */
+      --bg: #fdfbf7;
+      --text: #3a2f2a;
+      --accent: #8e6f5e;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1519741468941-b3e42b74be17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
+    }
+    h1 { margin: 0 0 1rem 0; font-size: 2.5rem; color: var(--accent); }
+    .date-place { font-size: 1.25rem; margin-top: 0.5rem; }
+    main { max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+    section { margin-bottom: 3rem; }
+    h2 { text-align: center; border-bottom: 1px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    .timeline-item { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center; }
+    .time { min-width: 80px; font-weight: bold; color: var(--accent); }
+    form label { display: block; margin-top: 1rem; font-weight: bold; }
+    form input, form select, form textarea { width: 100%; padding: 0.75rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 6px; }
+    button[type="submit"] {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { background: #b88b5a; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .timeline-item { flex-direction: column; align-items: flex-start; }
+      .time { margin-bottom: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Татьяна и Сергей<br>приглашают вас</h1>
+    <div class="date-place">1 июля 2027 • Ресторан «Мираж», Иркутск</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Наша история</h2>
+      <p>Мы познакомились блаблаблаблабалбалаблабалаблабалблаблаблаблабала.</p>
+    </section>
+
+    <section>
+      <h2>Детали свадьбы</h2>
+      <p><strong>Церемония:</strong> 15:20, зал «Красавица Ангара», Ресторан «Мираж»<br>
+         <strong>Банкет:</strong> 17:00–23:00<br>
+         <strong>Дресс-код:</strong> semi-formal, пастельные и тёплые тона приветствуются<br>
+         <strong>Трансфер:</strong> </p>
+    </section>
+
+    <section>
+      <h2>Программа дня</h2>
+      <div class="timeline-item">
+        <div class="time">14:30–15:00</div>
+        <div>Сбор гостей, приветственные напитки</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">15:00–15:30</div>
+        <div>Церемония</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">17:00–23:00</div>
+        <div>Банкет и танцы</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Подарки</h2>
+      <p>Нам будет приятно ваше присутствие — это самый ценный подарок. Если хотите порадовать нас, мы подготовили небольшой вишлист: <a href="#">ссылка на вишлист</a>.</p>
+    </section>
+
+    <section>
+      <h2>Подтвердите участие</h2>
+      <form onsubmit="event.preventDefault(); alert('Спасибо за подтверждение!');">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" required placeholder="Например: Елена Смирнова" />
+
+        <label for="guests">Количество гостей</label>
+        <select id="guests" required>
+          <option value="1">1 гость (я)</option>
+          <option value="2">2 гостя</option>
+          <option value="3">3 гостя</option>
+          <option value="4">4 гостя</option>
+        </select>
+
+        <label for="diet">Предпочтения по еде</label>
+        <select id="diet" required>
+          <option value="обычное">Обычное меню</option>
+          <option value="вегетарианское">Вегетарианское</option>
+          <option value="безглютеновое">Без глютена</option>
+          <option value="аллергия">Есть аллергия (указать в комментарии)</option>
+        </select>
+
+        <label for="comment">Комментарий или вопрос</label>
+        <textarea id="comment" rows="3" placeholder="Например: Приеду на такси, нужен поздний заезд..."></textarea>
+
+        <button type="submit">Отправить подтверждение</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Вопросы? Свяжитесь с нами:<br>
+       Телефон: +7 (908) 772-95-91<br>
+       Email: wedding@tat-ser.ru<br>
+       <a href="https://t.me/aynat1071" target="_blank">Telegram</a></p>
+  </footer>
+</body>
+</html>
